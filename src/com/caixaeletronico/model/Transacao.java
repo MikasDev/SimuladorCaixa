@@ -36,7 +36,7 @@ public class Transacao {
         return tipo;
     }
 
-    public void setTipo(){
+    public void setTipo(String tipo){
         if(tipo.equals("deposito") || tipo.equals("saque")){
             this.tipo = tipo;
         }

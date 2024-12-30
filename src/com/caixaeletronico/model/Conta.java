@@ -47,7 +47,7 @@
                     throw new IllegalArgumentException("Saldo insuficiente para realizar o saque");
                 }
 
-                this.saldo += valor;
+                this.saldo -= valor;
             }
             else{
                 throw new IllegalArgumentException("O valor depositado deve ser maior que 0");

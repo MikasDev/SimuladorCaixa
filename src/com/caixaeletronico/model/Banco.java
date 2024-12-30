@@ -29,6 +29,10 @@ public class Banco {
         this.bancoSelecionado = bancoSelecionado;
     }
 
+    public List<Conta> getContas(){
+        return contas;
+    }
+
     //metodos
     public void verificarBanco(String nome){
         for (int i = 0; i < nomesBancos.size() ; i++) {
@@ -39,6 +43,10 @@ public class Banco {
                 throw new IllegalArgumentException("Banco Invalido");
             }
         }
+    }
+
+    public void cadastrarConta(Conta conta){
+        contas.add(conta);
     }
 
 
