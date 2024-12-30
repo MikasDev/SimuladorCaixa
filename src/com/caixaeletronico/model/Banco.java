@@ -4,19 +4,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Banco {
-    private String nome;
+    private List<String> nomesBancos;
     private List<Conta> contas;
+    private String bancoSelecionado;
 
-    public Banco (String nome){
-        this.nome = nome;
+    public Banco (String bancoSelecionado){
+        this.nomesBancos = new ArrayList<>(List.of(
+                "Banco do Brasil",
+                "Caixa Econômica",
+                "Itaú",
+                "Bradesco",
+                "Santander"
+        ));
         this.contas = new ArrayList<>();
+        this.bancoSelecionado = bancoSelecionado;
     }
 
-    public String getNome(){
-        return nome;
+    //get set
+    public String getBancoSelecionado(){
+        return bancoSelecionado;
     }
 
-    public void setNome(String nome){
-        this.nome = nome;
+    public void setBancoSelecionado(String bancoSelecionado){
+        this.bancoSelecionado = bancoSelecionado;
     }
+
+    //metodos
+    public void verificarBanco(String nome){
+        for (int i = 0; i < nomesBancos.size() ; i++) {
+            if(nomesBancos.get(i).equalsIgnoreCase(nome)){
+                this.bancoSelecionado = nome;
+            }
+            else{
+                throw new IllegalArgumentException("Banco Invalido");
+            }
+        }
+    }
+
+
 }
