@@ -2,12 +2,10 @@
 
     public class Conta {
         private String cpf;
-        private String senha;
         private Double saldo;
 
-        public Conta(String cpf, String senha, Double saldo){
+        public Conta(String cpf,Double saldo){
             this.cpf = cpf;
-            this.senha = senha;
             this.saldo = 0.0;
         }
 
@@ -17,14 +15,6 @@
 
         public void setCpf(String cpf){
             this.cpf = cpf;
-        }
-
-        public String getSenha(){
-            return senha;
-        }
-
-        public void setSenha(String senha){
-            this.senha = senha;
         }
 
         public Double getSaldo(){

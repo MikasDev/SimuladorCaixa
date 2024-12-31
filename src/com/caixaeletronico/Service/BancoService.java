@@ -13,8 +13,9 @@ public class BancoService {
         banco.verificarBanco(nomeBanco);
     }
 
-    public void criarConta(String cpf, String senha, Double saldo){
-        Conta novaConta = new Conta(cpf, senha, 0.0);
+    //conta foda omaga
+    public void criarConta(String cpf, Double saldo){
+        Conta novaConta = new Conta(cpf,0.0);
         banco.cadastrarConta(novaConta);
     }
 
@@ -28,4 +29,16 @@ public class BancoService {
         throw new IllegalArgumentException("Conta não encontrada");
     }
 
+    //deposito e saque nas contas
+    public void depositarValor(String cpf, Double valor){
+        Conta conta = buscarContaPorCpf(cpf);
+        conta.depositar(valor);
+        System.out.println("Deposito de "+ valor + "realizado com sucesso ");
+    }
+
+    public void sacarValor(String cpf, Double valor){
+        Conta conta = buscarContaPorCpf(cpf);
+        conta.sacar(valor);
+        System.out.println("Saque de "+valor+"realizado com sucesso");
+    }
 }
