@@ -9,10 +9,6 @@ public class BancoService {
         this.banco = banco;
     }
 
-    public void selecionarBanco(String nomeBanco){
-        banco.verificarBanco(nomeBanco);
-    }
-
     //conta foda omaga
     public void criarConta(String cpf, Double saldo){
         Conta novaConta = new Conta(cpf,0.0);
@@ -27,6 +23,11 @@ public class BancoService {
         }
 
         throw new IllegalArgumentException("Conta não encontrada");
+    }
+
+    // sssss
+    public void selecionarBanco(String nomeBanco){
+        banco.verificarBanco(nomeBanco);
     }
 
     //deposito e saque nas contas
