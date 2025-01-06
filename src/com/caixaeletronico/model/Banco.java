@@ -38,6 +38,7 @@ public class Banco {
         for (int i = 0; i < nomesBancos.size() ; i++) {
             if(nomesBancos.get(i).equalsIgnoreCase(nome)){
                 this.bancoSelecionado = nome;
+                return;
             }
             else{
                 throw new IllegalArgumentException("Banco Invalido");
@@ -47,6 +48,13 @@ public class Banco {
 
     public void cadastrarConta(Conta conta){
         contas.add(conta);
+    }
+
+    public void printBancos(){
+        System.out.println("**** Bancos Disponiveis ****");
+        for (int i = 0; i < nomesBancos.size(); i++) {
+            System.out.println("- " + nomesBancos.get(i));
+        }
     }
 
 
