@@ -21,30 +21,27 @@ public class Banco {
     }
 
     //get set
-    public String getBancoSelecionado(){
-        return bancoSelecionado;
-    }
-
     public void setBancoSelecionado(String bancoSelecionado){
         this.bancoSelecionado = bancoSelecionado;
     }
-
+    public String getBancoSelecionado(){
+        return bancoSelecionado;
+    }
     public List<Conta> getContas(){
         return contas;
     }
 
     //metodos
-    public void verificarBanco(String nome){
-        for (int i = 0; i < nomesBancos.size() ; i++) {
-            if(nomesBancos.get(i).equalsIgnoreCase(nome)){
-                this.bancoSelecionado = nome;
+    public void verificarBanco(String nome) {
+        for (int i = 0; i < nomesBancos.size(); i++) {
+            if (nomesBancos.get(i).equalsIgnoreCase(nome)) {
+                setBancoSelecionado(nome);
                 return;
             }
-            else{
-                throw new IllegalArgumentException("Banco Invalido");
-            }
         }
+        throw new IllegalArgumentException("Banco Inválido");
     }
+
 
     public void cadastrarConta(Conta conta){
         contas.add(conta);

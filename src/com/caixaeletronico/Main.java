@@ -21,7 +21,7 @@ public class Main {
         banco.printBancos();
 
         System.out.println("Selecione um banco: ");
-        String userBanco = sc.nextLine();
+        String userBanco = sc.next();
 
         bc.selecionarBancoController(userBanco);
     }
